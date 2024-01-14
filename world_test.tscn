@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr8somyjpwgdy"]
+
+[ext_resource type="PackedScene" uid="uid://dkheri4bg7o52" path="res://player_character.tscn" id="1_cm3af"]
+[ext_resource type="PackedScene" uid="uid://doj6n00yl723f" path="res://enemy_circle.tscn" id="2_6p5m6"]
+
+[node name="WorldTest" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_cm3af")]
+position = Vector2(326, 252)
+
+[node name="EnemyCircle" parent="." instance=ExtResource("2_6p5m6")]
+position = Vector2(264, 97)
+
+[node name="EnemyCircle2" parent="." instance=ExtResource("2_6p5m6")]
+position = Vector2(315, 95)
