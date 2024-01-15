@@ -5,23 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://doj6n00yl723f" path="res://enemy_circle.tscn" id="2_6p5m6"]
 
 [node name="WorldTest" type="Node2D"]
-position = Vector2(65, 37)
 script = ExtResource("1_lml3o")
-
-[node name="EnemyCircle" parent="." instance=ExtResource("2_6p5m6")]
-position = Vector2(264, 97)
-
-[node name="EnemyCircle2" parent="." instance=ExtResource("2_6p5m6")]
-position = Vector2(1173, 546)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_cm3af")]
 position = Vector2(326, 252)
 
-[node name="DistancetoCenter" type="ProgressBar" parent="."]
-offset_right = 4.0
-offset_bottom = 27.0
-scale = Vector2(2, 2)
-value = 1.0
-metadata/_edit_use_anchors_ = true
+[node name="EnemyCircle" parent="." instance=ExtResource("2_6p5m6")]
+position = Vector2(264, 97)
 
 [connection signal="child_entered_tree" from="PlayerCharacter" to="." method="_on_player_character_child_entered_tree"]
