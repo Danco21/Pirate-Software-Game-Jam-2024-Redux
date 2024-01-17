@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://doj6n00yl723f" path="res://enemy_circle.tscn" id="2_6p5m6"]
 
 [node name="WorldTest" type="Node2D"]
-position = Vector2(65, 37)
 script = ExtResource("1_lml3o")
 
 [node name="EnemyCircle" parent="." instance=ExtResource("2_6p5m6")]
@@ -15,10 +14,21 @@ position = Vector2(264, 97)
 position = Vector2(326, 252)
 
 [node name="DistancetoCenter" type="ProgressBar" parent="."]
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = 32.0
+offset_top = -2.0
+offset_right = 36.0
+offset_bottom = 25.0
 scale = Vector2(2, 2)
 value = 1.0
 metadata/_edit_use_anchors_ = true
+
+[node name="EnemyCircle2" parent="." instance=ExtResource("2_6p5m6")]
+position = Vector2(595, 402)
+
+[node name="EnemyCircle3" parent="." instance=ExtResource("2_6p5m6")]
+position = Vector2(738, 132)
+
+[node name="EnemyCircle4" parent="." instance=ExtResource("2_6p5m6")]
+position = Vector2(246, 506)
 
 [connection signal="child_entered_tree" from="PlayerCharacter" to="." method="_on_player_character_child_entered_tree"]
