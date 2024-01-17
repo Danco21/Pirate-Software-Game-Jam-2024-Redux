@@ -17,7 +17,7 @@ func _draw()->void:
 
 # starting radius value of the collision circle
 func _ready():
-	collision.shape.radius = 0
+	collision.shape.radius = 10
 
 func _process(delta):
 	# grow shape radius, then refresh the shape drawn on screen
