@@ -8,7 +8,7 @@ var check
 var radius_size = 10
 var radius_origin = 10
 
-const GROWTH_RATE = 10
+const GROWTH_RATE = 20
 
 # draw sprite for detection circle and origin circle
 func _draw()->void:
@@ -22,21 +22,22 @@ func _ready():
 func _process(delta):
 	# grow shape radius, then refresh the shape drawn on screen
 	radius_size += delta * GROWTH_RATE
-	queue_redraw()
-	
-	# grow node collision by time elapsed * 10
+	# grow node collision by time elapsed * 
 	collision.shape.radius += delta * GROWTH_RATE
+	queue_redraw()
 
 # test for player sprite entering enemy detection area
 func _on_enemy_radius_body_entered(body):
-	print(body, " has entered Signal Range")
+	print("player sprite entered enemy radius")
+	print(collision.shape.radius)
+	print(radius_size)
 	check = true
 
 # test for player sprite leaving enemy detection area
 func _on_enemy_radius_body_exited(body):
 	check = false
-	print(body, " has exited Signal Range")
+	print("exited")
 
 # test for player sprite reaching origin point
 func _on_enemy_origin_radius_body_entered(body):
-	print(body, " has entered Signal Origin")
+	print("target hit")

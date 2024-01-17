@@ -8,10 +8,13 @@
 script = ExtResource("1_0nbqo")
 
 [node name="EnemyRadius" type="Area2D" parent="."]
+modulate = Color(1, 0.439216, 1, 1)
+self_modulate = Color(1, 0.290196, 1, 1)
 metadata/_edit_group_ = true
 
 [node name="EnemyRadiusCollision" type="CollisionShape2D" parent="EnemyRadius"]
 shape = SubResource("CircleShape2D_qme8m")
+debug_color = Color(0.552941, 0.25098, 0.54902, 1)
 
 [node name="EnemyOriginRadius" type="Area2D" parent="."]
 metadata/_edit_group_ = true
