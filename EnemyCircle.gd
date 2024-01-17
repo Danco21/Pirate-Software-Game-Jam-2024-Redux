@@ -10,11 +10,9 @@ func _draw()->void:
 	draw_circle(Vector2(0,0), radius_size*1, Color.BLACK)
 	draw_circle(Vector2(0,0), radius_origin, Color.RED)
 
-# Called when the node enters the scene tree for the first time.
+# ? initial radius value of the collision space
 func _ready():
 	collision.shape.radius = 0
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

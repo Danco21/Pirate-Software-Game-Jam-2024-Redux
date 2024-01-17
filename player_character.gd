@@ -6,10 +6,11 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta):
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Get the input direction, axis direction is negative or positive
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	var direction_y = Input.get_axis("ui_up", "ui_down")
+	
+	# if (true), velocity on x axis is neg/pos with constant speed
 	if direction_x:
 		velocity.x = direction_x * SPEED
 	else:

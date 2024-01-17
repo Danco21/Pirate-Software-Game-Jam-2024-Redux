@@ -12,10 +12,3 @@ func _process(delta):
 
 func map(value, fl, fh, tl, th):
 	return ((value - fl)*(th-tl)/(fh-fl)+tl)
-
-
-
-
-
-	
-
