@@ -4,7 +4,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qme8m"]
 
-[node name="EnemyCircle" type="Node2D"]
+[node name="EnemyCircle" type="Node2D" groups=["enemies"]]
 script = ExtResource("1_0nbqo")
 
 [node name="EnemyRadius" type="Area2D" parent="."]

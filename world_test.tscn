@@ -11,9 +11,6 @@ script = ExtResource("1_lml3o")
 [node name="EnemyCircle" parent="." instance=ExtResource("2_6p5m6")]
 position = Vector2(264, 97)
 
-[node name="EnemyCircle2" parent="." instance=ExtResource("2_6p5m6")]
-position = Vector2(1173, 546)
-
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_cm3af")]
 position = Vector2(326, 252)
 

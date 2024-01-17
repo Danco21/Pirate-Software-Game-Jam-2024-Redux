@@ -20,17 +20,17 @@ func _ready():
 	collision.shape.radius = 10
 
 func _process(delta):
-	# grow shape radius, then refresh the shape drawn on screen
+	# grow radius of shape drawn on screen
 	radius_size += delta * GROWTH_RATE
-	# grow node collision by time elapsed * 
+	# grow radius of collision 
 	collision.shape.radius += delta * GROWTH_RATE
 	queue_redraw()
 
 # test for player sprite entering enemy detection area
 func _on_enemy_radius_body_entered(body):
 	print("player sprite entered enemy radius")
-	print(collision.shape.radius)
-	print(radius_size)
+	print("node collision radius=", collision.shape.radius)
+	print("drawn shape radius=",radius_size)
 	check = true
 
 # test for player sprite leaving enemy detection area
@@ -40,4 +40,5 @@ func _on_enemy_radius_body_exited(body):
 
 # test for player sprite reaching origin point
 func _on_enemy_origin_radius_body_entered(body):
-	print("target hit")
+	pass
+	#print("target hit")
