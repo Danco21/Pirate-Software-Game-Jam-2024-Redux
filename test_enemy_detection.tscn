@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://wlhmj6t6venr"]
+
+[ext_resource type="Script" path="res://EnemyCircle.gd" id="1_6n0kf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qme8m"]
+
+[node name="EnemyCircle" type="Node2D" groups=["enemies"]]
+script = ExtResource("1_6n0kf")
+
+[node name="EnemyRadius" type="Area2D" parent="."]
+modulate = Color(1, 0.439216, 1, 1)
+self_modulate = Color(1, 0.290196, 1, 1)
+metadata/_edit_group_ = true
+
+[node name="EnemyRadiusCollision" type="CollisionShape2D" parent="EnemyRadius"]
+shape = SubResource("CircleShape2D_qme8m")
+debug_color = Color(0.552941, 0.25098, 0.54902, 1)
+
+[node name="EnemyOriginRadius" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="EnemyOriginCollision" type="CollisionShape2D" parent="EnemyOriginRadius"]
+shape = SubResource("CircleShape2D_qme8m")
+
+[connection signal="body_entered" from="EnemyRadius" to="." method="_on_enemy_radius_body_entered"]
+[connection signal="body_exited" from="EnemyRadius" to="." method="_on_enemy_radius_body_exited"]
+[connection signal="body_entered" from="EnemyOriginRadius" to="." method="_on_enemy_origin_radius_body_entered"]
