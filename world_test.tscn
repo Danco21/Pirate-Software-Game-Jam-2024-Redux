@@ -2,17 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dkheri4bg7o52" path="res://player_character.tscn" id="1_cm3af"]
 [ext_resource type="Script" path="res://world_test.gd" id="1_lml3o"]
-[ext_resource type="PackedScene" uid="uid://doj6n00yl723f" path="res://enemy_circle.tscn" id="2_6p5m6"]
+[ext_resource type="PackedScene" uid="uid://csgbulrbsq8s1" path="res://enemy.tscn" id="2_hf7p1"]
 
 [node name="WorldTest" type="Node2D"]
-position = Vector2(65, 37)
+position = Vector2(152, 94)
 script = ExtResource("1_lml3o")
 
-[node name="EnemyCircle" parent="." instance=ExtResource("2_6p5m6")]
-position = Vector2(264, 97)
-
-[node name="EnemyCircle2" parent="." instance=ExtResource("2_6p5m6")]
-position = Vector2(1173, 546)
+[node name="Enemy" parent="." instance=ExtResource("2_hf7p1")]
+position = Vector2(-151, -95)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_cm3af")]
 position = Vector2(326, 252)
@@ -25,3 +22,5 @@ value = 1.0
 metadata/_edit_use_anchors_ = true
 
 [connection signal="child_entered_tree" from="PlayerCharacter" to="." method="_on_player_character_child_entered_tree"]
+
+[editable path="Enemy"]

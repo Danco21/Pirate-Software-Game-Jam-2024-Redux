@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://csgbulrbsq8s1"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_4m3ud"]
+[ext_resource type="PackedScene" uid="uid://doj6n00yl723f" path="res://enemy_circle.tscn" id="1_l0avx"]
+[ext_resource type="PackedScene" uid="uid://bohi3ulb0ydrg" path="res://enemy_origin.tscn" id="2_0i6f7"]
+
+[node name="Enemy" type="Node2D"]
+position = Vector2(327, 168)
+script = ExtResource("1_4m3ud")
+
+[node name="EnemyCircle" parent="." instance=ExtResource("1_l0avx")]
+
+[node name="EnemyOrigin" parent="." instance=ExtResource("2_0i6f7")]
