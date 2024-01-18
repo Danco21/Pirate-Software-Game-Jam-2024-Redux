@@ -5,10 +5,10 @@ extends Node2D
 var enterValue
 var check
 # starting enemy detection and origin circle
-var radius_size = 10
+var radius_size = 100
 var radius_origin = 10
+#const GROWTH_RATE = 20
 
-const GROWTH_RATE = 20
 
 # draw sprite for detection circle and origin circle
 func _draw()->void:
@@ -16,22 +16,22 @@ func _draw()->void:
 	draw_circle(Vector2(0,0), radius_origin, Color.RED)
 
 # starting radius value of the collision circle
-#func _ready():
-	#pass
-	#collision.shape.radius = 10
+func _ready():
+	collision.shape.radius = 100
 
-func _process(delta):
+#func _process(delta):
 	# grow radius of shape drawn on screen
-	radius_size += delta * GROWTH_RATE
+	#radius_size += delta * GROWTH_RATE
 	# grow radius of collision 
-	collision.shape.radius += delta * GROWTH_RATE
-	queue_redraw()
+	#collision.shape.radius += delta * GROWTH_RATE
+	#queue_redraw()
 
 # test for player sprite entering enemy detection area
 func _on_enemy_radius_body_entered(body):
 	print("player sprite entered enemy radius")
-	print("node collision radius=", collision.shape.radius)
+	print("collision node radius=", collision.shape.radius)
 	print("drawn shape radius=",radius_size)
+	print("collision node position=",collision.global_position)
 	check = true
 
 # test for player sprite leaving enemy detection area
