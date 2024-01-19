@@ -1,33 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr8somyjpwgdy"]
+[gd_scene load_steps=3 format=3 uid="uid://dr8somyjpwgdy"]
 
 [ext_resource type="PackedScene" uid="uid://dkheri4bg7o52" path="res://player_character.tscn" id="1_cm3af"]
-[ext_resource type="Script" path="res://world_test.gd" id="1_lml3o"]
-[ext_resource type="PackedScene" uid="uid://dlngbjc716c01" path="res://Bullet Hell/Turret.tscn" id="2_6d4j4"]
-[ext_resource type="PackedScene" uid="uid://doj6n00yl723f" path="res://enemy.tscn" id="2_xblyh"]
+[ext_resource type="Script" path="res://Spawner.gd" id="4_4p5pa"]
 
 [node name="WorldTest" type="Node2D"]
 position = Vector2(-3, 0)
-script = ExtResource("1_lml3o")
 
-[node name="Turret" parent="." instance=ExtResource("2_6d4j4")]
-position = Vector2(393, -258)
-
-[node name="Enemy" parent="." instance=ExtResource("2_xblyh")]
-
-[node name="Enemy2" parent="." instance=ExtResource("2_xblyh")]
-position = Vector2(821, 49)
-growthrate = 10
-
-[node name="DistancetoCenter" type="ProgressBar" parent="."]
-offset_left = 401.0
-offset_top = -57.0
-offset_right = 405.0
-offset_bottom = -30.0
-scale = Vector2(2, 2)
-value = 1.0
-metadata/_edit_use_anchors_ = true
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("4_4p5pa")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_cm3af")]
 position = Vector2(326, 252)
+
+[node name="DistancetoCenter" type="ProgressBar" parent="PlayerCharacter"]
+offset_left = 75.0
+offset_top = -309.0
+offset_right = 79.0
+offset_bottom = -282.0
+scale = Vector2(2, 2)
+value = 1.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="child_entered_tree" from="PlayerCharacter" to="." method="_on_player_character_child_entered_tree"]

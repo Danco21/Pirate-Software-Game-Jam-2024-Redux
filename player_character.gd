@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get the input direction, negative or positive
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	var direction_y = Input.get_axis("ui_up", "ui_down")

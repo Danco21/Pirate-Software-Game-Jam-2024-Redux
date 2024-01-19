@@ -4,7 +4,6 @@
 resource_local_to_scene = true
 script/source = "extends Node2D
 # get collision node, but only when node tree is ready
-#@onready var collision = get_child(0).get_child(0)
 @onready var collision = $EnemyRadius/EnemyRadiusCollision
 @onready var originCollision = $OriginArea/OriginCollision
 @onready var check
@@ -13,6 +12,7 @@ script/source = "extends Node2D
 # starting enemy detection and origin circle
 var radius_size = 10
 var radius_origin = 10
+var killmyself = false
 
 # draw sprite for detection circle and origin circle
 func _draw()->void:
@@ -47,6 +47,8 @@ func _on_enemy_radius_body_exited(body):
 
 func _on_origin_area_body_entered(body):
 	print(body, \" has entered Origin Range\")
+	killmyself = true
+	
 
 func _on_origin_area_body_exited(body):
 	print(body, \" has exited Origin Range\")
